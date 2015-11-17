@@ -1,0 +1,36 @@
+
+<ng-include src="'/partials/navbar.html'"></ng-include>
+
+<div class="container">
+  <div class="row">
+    <div col-md-12>
+      <h1>Kirjaudu</h1>
+    </div>
+  </row>
+  <div class="row">
+    <div col-md-12>
+      <form class="form-horizontal" role="form" ng-submit="login()">
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="username">Käyttäjätunnus:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="username" ng-model="username" placeholder="Käyttäjätunnus">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="password">Salasana:</label>
+          <div class="col-sm-10"> 
+            <input type="password" class="form-control" id="password" ng-model="password" placeholder="Salasana">
+          </div>
+        </div>
+        <div class="form-group"> 
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Kirjaudu</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<ng-include src="'/partials/footer.html'"></ng-include>

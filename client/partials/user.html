@@ -1,0 +1,42 @@
+
+<ng-include src="'/partials/navbar.html'"></ng-include>
+
+<!-- Page Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="list-group">
+        <a class="list-group-item" ng-repeat="user in users" ng-href="/#/user/{{user.username}}">
+          {{user.realname}}
+        </a>
+      </div>
+    </div>
+    <div ng-if="activeUser" class="col-md-9">
+      <div class="thumbnail">
+        <div class="caption-full">
+          <h2>{{activeUser.realname}}</h2>
+          <h3>{{activeUser.username}}</h3>
+        </div>
+      </div>
+      <div ng-if="loggedInUser.username === activeUser.username" class="well">
+        <form ng-submit="sendmessage(messagetext); messagetext = ''">
+          <textarea class="newmessage" name="messagetext" ng-model="messagetext"></textarea>
+          <button type="submit" class="btn btn-primary">Lähetä</button>
+        </form>
+      </div>
+      <div ng-repeat="message in messages" class="well">
+        <div class="row" >
+          <div class="col-md-12">
+            <span class="pull-right"><small>{{message.createdAt}}</small></span>
+            <p>{{message.text}}</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<!-- /.container -->
+
+
+<ng-include src="'/partials/footer.html'"></ng-include>

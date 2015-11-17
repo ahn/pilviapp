@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      Etsi: <input ng-model="query">
+    </div>
+    <div class="col-md-10">
+      <ul class="users">
+        <li ng-repeat="user in users | filter:query">
+          <p>{{user.name}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

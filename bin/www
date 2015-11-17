@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+var app = require('../app.js');
+var models = require("../models");
+
+models.sequelize.sync().then(function () {
+  var server = app.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function () {
+    var host = server.address().address;
+    var port = server.address().port;
+  
+    console.log('Example app listening at http://%s:%s', host, port);
+  });
+});
