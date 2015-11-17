@@ -11,15 +11,15 @@ Jälkimmäisessä autentikointiin liittyviä reittejä.
 
 Sequelize-tietokantamallit ovat hakemistossa `models`.
 
-Asennetaan riippuvuudet
+## Käyttöönotto
+
+Asenna riippuvuudet:
 
     npm install
 
-
-Sovellus käynnistetään komennolla
+Käynnistä sovellus:
 
     npm start
-
 
 Tietokannat saa alustettua + tyhjättyä komennolla
 
