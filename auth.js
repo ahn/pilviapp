@@ -75,6 +75,11 @@ router.post('/login', passport.authenticate('local'), function(req, res) {
   res.send(req.user);
 });
 
+router.post('/logout', function(req, res) {
+  req.logout();
+  res.json({"message": "Logout successful"});
+});
+
 
 module.exports = {
   auth: auth,

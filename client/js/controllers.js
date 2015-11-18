@@ -11,9 +11,16 @@ pilviAppControllers.controller('EtusivuController',
 );
 
 pilviAppControllers.controller('UserHomeController',
-  function($scope, $routeParams, User, Auth, loggedInUser, allUsers) {
+  function($scope, $routeParams, User, Auth, loggedInUser, allUsers, Notification) {
     $scope.loggedInUser = loggedInUser;
     $scope.users = allUsers;
+    
+    $scope.logout = function() {
+      Auth.logout().then(function() {
+        Notification.success("Uloskirjautuminen onnnistui");
+        $scope.loggedInUser = null;
+      });
+    }
   }
 );
 

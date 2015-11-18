@@ -65,7 +65,20 @@ pilviAppServices.factory('Auth',
       
     }
     
+    function logout() {
+      return $http({
+        method: 'POST',
+        url: '/auth/logout'
+      }).then(function(response) {
+        loggedInUser = null;
+      },
+      function() {
+        
+      });
+    }
+    
     return {
+      logout: logout,
       login: login,
       loggedIn: loggedIn,
       getLoggedInUser: function() { return loggedInUser; }
