@@ -13,7 +13,7 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(username, done) {
-  User.findOne({username: username}).then(function(user) {
+  User.findOne({where: {username: username}}).then(function(user) {
     done(null, user);
   },
   function (err) {
@@ -26,7 +26,7 @@ passport.deserializeUser(function(username, done) {
 passport.use(new LocalStrategy(
   function(username, password, done) {
 
-    User.findOne({ username: username }).then(function (user) {
+    User.findOne({where: {username: username}}).then(function (user) {
       if (!user) {
         return done(null, false);
       }
